@@ -45,11 +45,11 @@ module RolloutAdmin
     if params[:object_type] == "user"
       @users=[]
       params[:user].split(",").each {|id|
-        puts User.find(id).inspect
+        puts User.try(:find, id).inspect
 
-        $rollout.activate_user(params[:feature], User.find(id))
+        $rollout.activate_user(params[:feature], User.try(:find, id))
         @feature = $rollout.get(params[:feature])
-        @users << User.find(id)
+        @users << User.try(:find, id)
       }
 
       render :json => @users
