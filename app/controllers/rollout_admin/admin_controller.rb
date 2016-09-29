@@ -34,7 +34,7 @@ module RolloutAdmin
 
   def get_users
     if Object.const_defined?('User')
-      @users=User.all
+      @users= User.all
       render :json => @users
     else
       render :json => {'error' => 'no users defined'}
@@ -45,11 +45,15 @@ module RolloutAdmin
     if params[:object_type] == "user"
       @users=[]
       params[:user].split(",").each {|id|
-        puts User.try(:find, id).inspect
-
-        $rollout.activate_user(params[:feature], User.try(:find, id))
-        @feature = $rollout.get(params[:feature])
-        @users << User.try(:find, id)
+        user = User.try(:find, id)
+        puts user.inspect
+        
+        
+        if user
+            $rollout.activate_user(params[:feature], user)
+            @feature = $rollout.get(params[:feature])
+            @users << user
+        end
       }
 
       render :json => @users
