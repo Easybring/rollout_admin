@@ -9,7 +9,7 @@ gemspec
 gem "jquery-rails", '~> 4.2.2'
 gem 'redis'
 gem 'rollout', :git => 'https://github.com/nedeco/rollout.git', :branch => "workable"
-gem "less-rails", "~> 2.8.0"
+gem 'sass-rails', '~> 5.0.6'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-ui-rails', '~> 5.0.5'
 # Declare any dependencies that are still in development here instead of in
