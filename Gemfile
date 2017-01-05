@@ -9,7 +9,8 @@ gemspec
 gem "jquery-rails", '~> 4.2.2'
 gem 'redis'
 gem 'rollout', :git => 'https://github.com/nedeco/rollout.git', :branch => "workable"
-gem 'less-rails-bootstrap', '~> 3.3.5.0'
+gem "less-rails", "~> 2.8.0"
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-ui-rails', '~> 5.0.5'
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
