@@ -3,7 +3,7 @@ require_dependency "rollout_admin/application_controller"
 module RolloutAdmin
   class AdminController < ApplicationController
 
-  before_filter :authenticate
+  before_action :authenticate
 
   def index
   	@feature_list = $rollout.features
