@@ -6,12 +6,11 @@ source "http://rubygems.org"
 gemspec
 
 # jquery-rails is used by the dummy application
-gem "jquery-rails"
+gem "jquery-rails", '~> 4.2.2'
 gem 'redis'
 gem 'rollout', :git => 'https://github.com/nedeco/rollout.git', :branch => "workable"
-gem 'less-rails-bootstrap'
-gem 'therubyracer', :platforms => :ruby
-gem 'jquery-ui-rails'
+gem 'less-rails-bootstrap', '~> 3.3.5.0'
+gem 'jquery-ui-rails', '~> 5.0.5'
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
