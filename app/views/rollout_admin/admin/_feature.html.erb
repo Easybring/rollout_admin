@@ -1,7 +1,7 @@
 <div class="feature">
 	<h4 id="feature_name"><%=feature.name%></h4>
-	<a class="icon-chevron-down"></a>
-	<a class="icon-chevron-up" style="display:none;"></a>
+	<a class="icon-chevron-down clickable">Click to expand</a>
+	<a class="icon-chevron-up clickable" style="display:none;">Click to close</a>
 	<%#=$rollout.get(feature).inspect%>
 	<div id="details" class="details">
 		<dl class="dl-horizontal">
@@ -10,7 +10,8 @@
 		  	<ul class="unstyled">
 		  	<% if feature.users.count > 0 %>
 			  	<% feature.users.each {|user| %>
-			  		<li><i class="icon-minus delete_user" data-id="<%=user.to_i%>"></i>
+			  		<li>
+              <i class="clickable delete_user float-right" data-id="<%=user.to_i%>"> Delete</i>
 		  			 	<% if User.find(user.to_i).nil? %>
 		  			 		<%= user %>
 		  			 	<% else %>
@@ -21,7 +22,7 @@
 			<% else %>
 				<li>No members</li>
 			<% end %>
-				<li><i class="icon-plus add_users"></i></li>
+				<li><i class="clickable add_users">Press to add user</i></li>
 			</ul>
 		  </dd>
 		  <dt>Groups</dt>
@@ -29,12 +30,12 @@
 		  	<ul class="unstyled">
 		  	<% if feature.groups.count > 0 %>
 			  	<% feature.groups.each {|group| %>
-			  		<li><i class="icon-minus delete_group"></i><%=group%></li>
+			  		<li><i class="clickable delete_group float-right"  data-group="<%=group%>"> Delete</i><%=group%></li>
 				<% } %>
 			<% else %>
 				<li>No members</li>
 			<% end %>
-				<li><i class="icon-plus add_groups"></i></li>
+				<li><i class="clickable add_groups">Press to add groups</i></li>
 			</ul>
 		  </dd>
 		  <dt>IPs</dt>
@@ -42,12 +43,12 @@
 		  	<ul class="unstyled">
 		  	<% if feature.ips.count > 0 %>
 			  	<% feature.ips.each {|ip| %>
-			  		<li><i class="icon-minus delete_ip"></i><%=ip%></li>
+			  		<li><%=ip%><i class="clickable delete_ip float-right"  data-ip="<%=ip%>"> Delete</i></li>
 				<% } %>
 			<% else %>
 				<li>No members</li>
 			<% end %>
-				<li><i class="icon-plus add_ips"></i></li>
+				<li><i class="clickable add_ips">Press to add ip</i></li>
 			</ul>
 		  </dd>
 		  <dt>Percentage</dt>

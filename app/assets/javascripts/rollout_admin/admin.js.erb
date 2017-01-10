@@ -27,7 +27,7 @@ $(function(){
 	    }
     );
 
-    $(document).delegate('i.delete_user', 'click',
+    $(document).delegate('.delete_user', 'click',
     	function(){
     		var context=$(this).closest("div").parent().find("h4#feature_name").html(),
     			that=$(this).closest("li"),
@@ -40,12 +40,12 @@ $(function(){
 			});
     	});
 
-    $(document).delegate('i.delete_group','click',
+    $(document).delegate('.delete_group','click',
     	function(){
     		var context=$(this).closest("div").parent().find("h4#feature_name").html(),
     			that=$(this).closest("li"),
     			ulist=$(this).closest("ul");
-	 		$.post('<%= url.remove_path(:format => :json )%>', {object_type:"group", group: $(this).closest("li").text(), feature: context}, function(data) {
+	 		$.post('<%= url.remove_path(:format => :json )%>', {object_type:"group", group: $(this).data('group'), feature: context}, function(data) {
 	 			that.remove();
 	 			if ($("li",ulist).length == 1) {
 	 				ulist.children(':last').before('<li>No members</li>');
@@ -53,12 +53,12 @@ $(function(){
 			});
     	});
 
-    $(document).delegate('i.delete_ip','click',
+    $(document).delegate('.delete_ip','click',
     	function(){
     		var context=$(this).closest("div").parent().find("h4#feature_name").html(),
     			that=$(this).closest("li"),
     			ulist=$(this).closest("ul");
-	 		$.post('<%= url.remove_path(:format => :json )%>', {object_type:"ip", ip: $(this).closest("li").text(), feature: context}, function(data) {
+	 		$.post('<%= url.remove_path(:format => :json )%>', {object_type:"ip", ip: $(this).data('ip'), feature: context}, function(data) {
 	 			that.remove();
 	 			if ($("li",ulist).length == 1) {
 	 				ulist.children(':last').before('<li>No members</li>');

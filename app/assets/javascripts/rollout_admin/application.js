@@ -11,9 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require tether
+//= require bootstrap
 //= require jquery_ujs
-//= require jquery.ui.slider
-//= require jquery.ui.dialog
-//= require jquery.ui.datepicker
-//= require twitter/bootstrap
+//= require jquery-ui/slider
+//= require jquery-ui/dialog
+//= require jquery-ui/datepicker
+
 //= require_tree .

@@ -1,12 +1,10 @@
 
-@import "twitter/bootstrap/variables";
-@import "twitter/bootstrap/mixins";
-@import "twitter/bootstrap/responsive";
 
 
-
-@darkblue: #04263a;
-
+$darkblue: #04263a;
+.clickable {
+  cursor:pointer;
+}
 /* clearfix */
 .cf{
     zoom:1;
@@ -24,7 +22,7 @@ html, body {
     background: url(main_bg.jpg);
     font-family: 'Roboto Condensed', sans-serif;    
     font-size: 12px;
-    color: @white;
+    color: #fff;
 }
 
 header {
@@ -32,9 +30,9 @@ header {
     position: fixed;
     display: block;
     height: 60px;
-    box-shadow: 0 0 30px @darkblue;
+    box-shadow: 0 0 30px $darkblue;
     background: url(head_bg.jpg);
-    border-bottom: 5px solid @blue;
+    border-bottom: 5px solid $darkblue;
     width: 100%;
 
     @media (max-width: 767px) {
@@ -60,20 +58,6 @@ div.container{
 }
 
 
-.transition (@time: 0.2s) {
-    transition: all @time;
-    -moz-transition: all @time; /* Firefox 4 */
-    -webkit-transition: all @time; /* Safari and Chrome */
-    -o-transition: all @time; /* Opera */
-}
-
-.corners (@radius: 5px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  -ms-border-radius: @radius;
-  -o-border-radius: @radius;
-  border-radius: @radius;
-}
 
 
 div.feature {
@@ -84,8 +68,6 @@ div.feature {
 
 	padding: 10px;
 	border: solid 1px #ccc;
-	.box-sizing(border-box);
-    .border-radius( 5px );
     .actions {
     	position:relative;
     	bottom: 25px;
